@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copa do Mundo 2026</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #59c3ff, #ffe45e, #55ef7f);
+      min-height: 100vh;
+      color: #083358;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border-bottom: 3px solid white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 0;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #004aad;
+      font-size: 2rem;
+    }
+
+    .times {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.4);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .time-box:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .time-box h3 {
+      color: #006400;
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    table th, table td {
+      padding: 14px;
+      text-align: center;
+    }
+
+    table th {
+      background: #004aad;
+      color: white;
+    }
+
+    table tr:nth-child(even) {
+      background: rgba(255,255,255,0.3);
+    }
+
+    table tr:nth-child(odd) {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .game-area {
+      margin-top: 30px;
+      background: linear-gradient(#8ee38e, #57c957);
+      height: 500px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      border: 5px solid white;
+    }
+
+    .gol {
+      width: 260px;
+      height: 120px;
+      border: 8px solid white;
+      border-bottom: none;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .goleiro {
+      width: 70px;
+      height: 70px;
+      background: red;
+      border-radius: 10px;
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: mover 2s infinite alternate;
+    }
+
+    @keyframes mover {
+      from {
+        margin-left: -70px;
+      }
+      to {
+        margin-left: 70px;
+      }
+    }
+
+    .bola {
+      width: 55px;
+      height: 55px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 4px solid black;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .mensagem {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #003366;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .gol {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>⚽ Copa do Mundo 2026 ⚽</h1>
+    <p>Informações, seleções e mini game de pênalti!</p>
+  </header>
+
+  <div class="container">
+
+    <section class="card">
+      <h2>🌎 Sobre a Copa de 2026</h2>
+      <p>
+        A Copa do Mundo FIFA 2026 será realizada nos países Estados Unidos, México e Canadá.
+        Será a primeira edição com 48 seleções participantes, trazendo ainda mais emoção,
+        jogos históricos e grandes craques do futebol mundial.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🏆 Times Favoritos</h2>
+
+      <div class="times">
+        <div class="time-box">
+          <h3>🇧🇷 Brasil</h3>
+          <p>Conhecido pelo futebol arte e pelos 5 títulos mundiais.</p>
+        </div>
+
+        <div class="time-box">
+          <h3>🇦🇷 Argentina</h3>
+          <p>Atual campeã e dona de grandes jogadores históricos.</p>
+        </div>
+
+        <div class="time-box">
+          <h3>🇫🇷 França</h3>
+          <p>Seleção forte, rápida e muito técnica.</p>
+        </div>
+
+        <div class="time-box">
+          <h3>🇩🇪 Alemanha</h3>
+          <p>Tradicional potência do futebol mundial.</p>
+        </div>
+
+        <div class="time-box">
+          <h3>🇵🇹 Portugal</h3>
+          <p>Equipe talentosa com jogadores muito habilidosos.</p>
+        </div>
+
+        <div class="time-box">
+          <h3>🇪🇸 Espanha</h3>
+          <p>Famosa pelo toque de bola e domínio do jogo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📅 Possíveis Jogos da Copa</h2>
+
+      <table>
+        <tr>
+          <th>Jogo</th>
+          <th>Data</th>
+          <th>Horário</th>
+        </tr>
+
+        <tr>
+          <td>Brasil x Argentina</td>
+          <td>15/06/2026</td>
+          <td>21:00</td>
+        </tr>
+
+        <tr>
+          <td>França x Alemanha</td>
+          <td>17/06/2026</td>
+          <td>18:00</td>
+        </tr>
+
+        <tr>
+          <td>Portugal x Espanha</td>
+          <td>20/06/2026</td>
+          <td>16:00</td>
+        </tr>
+
+        <tr>
+          <td>Brasil x França</td>
+          <td>24/06/2026</td>
+          <td>20:00</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>🎮 Mini Game - Chute ao Gol</h2>
+
+      <p>
+        Clique na bola para chutar. Se acertar o gol sem bater no goleiro,
+        você marca ponto!
+      </p>
+
+      <div class="game-area">
+        <div class="gol"></div>
+        <div class="goleiro" id="goleiro"></div>
+        <div class="bola" id="bola">⚽</div>
+      </div>
+
+      <div class="mensagem" id="mensagem">
+        Faça um gol!
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    Desenvolvido para projeto da Copa do Mundo 2026 ⚽
+  </footer>
+
+  <script>
+    const bola = document.getElementById('bola');
+    const mensagem = document.getElementById('mensagem');
+    const goleiro = document.getElementById('goleiro');
+
+    bola.addEventListener('click', () => {
+
+      bola.style.transition = '1s';
+      bola.style.bottom = '360px';
+
+      const chance = Math.random();
+
+      setTimeout(() => {
+
+        if (chance > 0.4) {
+          mensagem.innerHTML = 'GOOOOOOLLLL!!! ⚽🔥';
+        } else {
+          mensagem.innerHTML = 'O goleiro defendeu! 🧤';
+        }
+
+        bola.style.transition = 'none';
+        bola.style.bottom = '30px';
+
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
