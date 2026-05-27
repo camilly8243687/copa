@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -75,6 +76,7 @@
       border-radius: 15px;
       text-align: center;
       transition: 0.3s;
+      line-height: 1.7;
     }
 
     .time-box:hover {
@@ -112,45 +114,61 @@
       background: rgba(255,255,255,0.15);
     }
 
+    /* MINI GAME */
+
     .game-area {
       margin-top: 30px;
       background: linear-gradient(#8ee38e, #57c957);
-      height: 500px;
+      height: 550px;
       border-radius: 20px;
       position: relative;
       overflow: hidden;
       border: 5px solid white;
     }
 
+    .campo-linha {
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.7);
+      bottom: 100px;
+    }
+
     .gol {
-      width: 700px;
-      height: 170px;
-      border: 8px solid white;
+      width: 850px;
+      height: 190px;
+      border: 10px solid white;
       border-bottom: none;
       position: absolute;
-      top: 40px;
+      top: 30px;
       left: 50%;
       transform: translateX(-50%);
+      border-radius: 10px;
     }
 
     .goleiro {
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       background: red;
-      border-radius: 10px;
+      border-radius: 15px;
       position: absolute;
-      top: 70px;
+      top: 85px;
       left: 50%;
       transform: translateX(-50%);
-      animation: mover 2s infinite alternate;
+      animation: mover 1.2s infinite alternate;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
     }
 
     @keyframes mover {
       from {
-        margin-left: -280px;
+        margin-left: -360px;
       }
+
       to {
-        margin-left: 280px;
+        margin-left: 360px;
       }
     }
 
@@ -159,10 +177,11 @@
       justify-content: center;
       gap: 15px;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .controles button {
-      padding: 10px 20px;
+      padding: 12px 22px;
       border: none;
       border-radius: 12px;
       background: #004aad;
@@ -170,6 +189,7 @@
       font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
+      font-weight: bold;
     }
 
     .controles button:hover {
@@ -178,8 +198,8 @@
     }
 
     .bola {
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       background: white;
       border-radius: 50%;
       position: absolute;
@@ -191,7 +211,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
 
     .mensagem {
@@ -202,6 +222,14 @@
       color: #003366;
     }
 
+    .placar {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #004aad;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -209,17 +237,25 @@
       font-weight: bold;
     }
 
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    @media (max-width: 900px) {
 
       .gol {
-        width: 480px;
+        width: 90%;
+      }
+
+      @keyframes mover {
+        from {
+          margin-left: -120px;
+        }
+
+        to {
+          margin-left: 120px;
+        }
       }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -231,10 +267,11 @@
 
     <section class="card">
       <h2>🌎 Sobre a Copa de 2026</h2>
+
       <p>
-        A Copa do Mundo FIFA 2026 será realizada nos países Estados Unidos, México e Canadá.
-        Será a primeira edição com 48 seleções participantes, trazendo ainda mais emoção,
-        jogos históricos e grandes craques do futebol mundial.
+        A Copa do Mundo FIFA 2026 será realizada nos países Estados Unidos,
+        México e Canadá. Será a primeira edição com 48 seleções participantes,
+        trazendo ainda mais emoção, jogos históricos e grandes craques do futebol mundial.
       </p>
     </section>
 
@@ -242,6 +279,7 @@
       <h2>🏆 Times Favoritos</h2>
 
       <div class="times">
+
         <div class="time-box">
           <h3>🇧🇷 Brasil</h3>
           <p>Conhecido pelo futebol arte e pelos 5 títulos mundiais.</p>
@@ -271,6 +309,80 @@
           <h3>🇪🇸 Espanha</h3>
           <p>Famosa pelo toque de bola e domínio do jogo.</p>
         </div>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🌍 Seleções Classificadas</h2>
+
+      <div class="times">
+
+        <div class="time-box">
+          <h3>🏟 Países-Sede</h3>
+          <p>🇨🇦 Canadá<br>🇺🇸 Estados Unidos<br>🇲🇽 México</p>
+        </div>
+
+        <div class="time-box">
+          <h3>🌎 CONMEBOL</h3>
+          <p>
+            🇦🇷 Argentina<br>
+            🇧🇷 Brasil<br>
+            🇨🇴 Colômbia<br>
+            🇪🇨 Equador<br>
+            🇵🇾 Paraguai<br>
+            🇺🇾 Uruguai
+          </p>
+        </div>
+
+        <div class="time-box">
+          <h3>🌍 UEFA</h3>
+          <p>
+            🇩🇪 Alemanha<br>
+            🇦🇹 Áustria<br>
+            🇧🇪 Bélgica<br>
+            🇭🇷 Croácia<br>
+            🏴 Escócia<br>
+            🇪🇸 Espanha<br>
+            🇫🇷 França<br>
+            🇳🇱 Holanda<br>
+            🏴 Inglaterra<br>
+            🇵🇹 Portugal
+          </p>
+        </div>
+
+        <div class="time-box">
+          <h3>🌍 CAF</h3>
+          <p>
+            🇲🇦 Marrocos<br>
+            🇪🇬 Egito<br>
+            🇸🇳 Senegal<br>
+            🇹🇳 Tunísia<br>
+            🇨🇮 Costa do Marfim
+          </p>
+        </div>
+
+        <div class="time-box">
+          <h3>🌏 AFC</h3>
+          <p>
+            🇯🇵 Japão<br>
+            🇰🇷 Coreia do Sul<br>
+            🇦🇺 Austrália<br>
+            🇶🇦 Catar<br>
+            🇸🇦 Arábia Saudita
+          </p>
+        </div>
+
+        <div class="time-box">
+          <h3>🌎 CONCACAF</h3>
+          <p>
+            🇨🇷 Costa Rica<br>
+            🇭🇹 Haiti<br>
+            🇯🇲 Jamaica<br>
+            🇵🇦 Panamá
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -278,6 +390,7 @@
       <h2>📅 Possíveis Jogos da Copa</h2>
 
       <table>
+
         <tr>
           <th>Jogo</th>
           <th>Data</th>
@@ -301,6 +414,7 @@
           <td>24/06/2026</td>
           <td>19:00</td>
         </tr>
+
       </table>
     </section>
 
@@ -308,24 +422,39 @@
       <h2>🎮 Mini Game - Chute ao Gol</h2>
 
       <p>
-        Clique na bola para chutar. Se acertar o gol sem bater no goleiro,
-        você marca ponto!
+        Use os botões para mover a bola e clique nela para chutar!
       </p>
 
       <div class="game-area">
+
         <div class="gol"></div>
-        <div class="goleiro" id="goleiro"></div>
-        <div class="bola" id="bola">⚽</div>
+
+        <div class="goleiro" id="goleiro">
+          🧤
+        </div>
+
+        <div class="campo-linha"></div>
+
+        <div class="bola" id="bola">
+          ⚽
+        </div>
+
       </div>
 
       <div class="controles">
         <button onclick="moverEsquerda()">⬅ Esquerda</button>
+        <button onclick="chutar()">🥅 CHUTAR</button>
         <button onclick="moverDireita()">Direita ➡</button>
       </div>
 
       <div class="mensagem" id="mensagem">
         Faça um gol!
       </div>
+
+      <div class="placar" id="placar">
+        Gols: 0
+      </div>
+
     </section>
 
   </div>
@@ -335,46 +464,60 @@
   </footer>
 
   <script>
+
     const bola = document.getElementById('bola');
     const mensagem = document.getElementById('mensagem');
-    const goleiro = document.getElementById('goleiro');
+    const placar = document.getElementById('placar');
+
     let posicao = 50;
+    let gols = 0;
 
     function moverEsquerda() {
-      if (posicao > 20) {
+
+      if (posicao > 10) {
         posicao -= 10;
         bola.style.left = posicao + '%';
       }
     }
 
     function moverDireita() {
-      if (posicao < 80) {
+
+      if (posicao < 90) {
         posicao += 10;
         bola.style.left = posicao + '%';
       }
     }
 
-    bola.addEventListener('click', () => {
+    function chutar() {
 
       bola.style.transition = '1s';
-      bola.style.bottom = '360px';
+      bola.style.bottom = '420px';
 
       const chance = Math.random();
 
       setTimeout(() => {
 
-        if (chance > 0.4) {
+        if (chance > 0.35) {
+
+          gols++;
+
           mensagem.innerHTML = 'GOOOOOOLLLL!!! ⚽🔥';
+          placar.innerHTML = 'Gols: ' + gols;
+
         } else {
+
           mensagem.innerHTML = 'O goleiro defendeu! 🧤';
+
         }
 
         bola.style.transition = 'none';
         bola.style.bottom = '30px';
 
       }, 1000);
-    });
+    }
+
   </script>
 
 </body>
 </html>
+```
