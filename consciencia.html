@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meio Ambiente - Copa Sustentável</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#2ecc71,#f1c40f,#3498db);
+    overflow-x:hidden;
+}
+
+/* Campo de futebol */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at center,
+    transparent 0 80px,
+    rgba(255,255,255,.3) 82px 84px,
+    transparent 86px),
+    linear-gradient(rgba(255,255,255,.15) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,.15) 2px, transparent 2px);
+    background-size:100% 100%, 100px 100px, 100px 100px;
+    pointer-events:none;
+}
+
+header{
+    text-align:center;
+    padding:30px;
+    color:white;
+    text-shadow:2px 2px 5px rgba(0,0,0,.4);
+}
+
+header h1{
+    font-size:3em;
+}
+
+.copa{
+    font-size:50px;
+    margin-top:10px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.9);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+.card h2{
+    color:#2e8b57;
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+.mensagem-area{
+    margin-top:30px;
+    text-align:center;
+}
+
+textarea{
+    width:100%;
+    max-width:600px;
+    height:120px;
+    border:none;
+    border-radius:15px;
+    padding:15px;
+    font-size:16px;
+    resize:none;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    background:#27ae60;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#219150;
+}
+
+/* Bola da mensagem */
+.bola{
+    width:260px;
+    height:260px;
+    background:white;
+    border-radius:50%;
+    margin:40px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+    font-weight:bold;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+    position:relative;
+}
+
+.bola::before{
+    content:"⚽";
+    position:absolute;
+    top:-20px;
+    font-size:40px;
+}
+
+footer{
+    text-align:center;
+    color:white;
+    padding:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌎 Copa Sustentável 🌎</h1>
+    <div class="copa">⚽🏆⚽</div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Conscientização Ambiental</h2>
+
+        <p>
+            Cuidar do meio ambiente é responsabilidade de todos.
+            Pequenas atitudes, como economizar água, reciclar e
+            evitar desperdícios, ajudam a construir um planeta
+            melhor para as próximas gerações.
+        </p>
+    </div>
+
+    <div class="mensagem-area">
+        <h2>Deixe sua mensagem ambiental ⚽</h2>
+
+        <textarea id="texto"
+        placeholder="Digite sua mensagem aqui..."></textarea>
+
+        <br>
+
+        <button onclick="mostrarMensagem()">
+            Mostrar Mensagem
+        </button>
+    </div>
+
+    <div class="bola" id="bolaMensagem">
+        Sua mensagem aparecerá aqui!
+    </div>
+
+</div>
+
+<footer>
+    🌱 Jogue pela natureza, marque um gol para o planeta! ⚽
+</footer>
+
+<script>
+function mostrarMensagem(){
+    let texto =
+    document.getElementById("texto").value;
+
+    document.getElementById("bolaMensagem")
+    .innerText = texto || "Sua mensagem aparecerá aqui!";
+}
+</script>
+
+</body>
+</html>
